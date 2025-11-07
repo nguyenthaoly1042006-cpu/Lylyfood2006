@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LYLYfood - Quán đồ ăn vặt Hàn Quốc</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff9f2;
+      color: #333;
+      transition: opacity 0.5s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #d39b4e;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+      text-decoration: underline;
+    }
+
+    section {
+      min-height: 80vh;
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === GIỚI THIỆU === */
+    section.about h2 {
+      font-size: 1.8rem;
+      color: #a86a1f;
+      margin-bottom: 0.5rem;
+    }
+
+    section.about p {
+      max-width: 750px;
+      margin: 1rem auto;
+      font-size: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+      max-width: 700px;
+      margin: 1.5rem auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* === MENU === */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .menu-grid div {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+
+    .menu-grid img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    form input,
+    form button,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: #d39b4e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    footer {
+      background-color: #d39b4e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="active" data-target="home">Giới thiệu</a>
+      <a data-target="menu">Thực đơn</a>
+      <a data-target="booking">Đặt bàn</a>
+      <a data-target="album">Album</a>
+      <a data-target="contact">Liên hệ</a>
+    </nav>
+  </header>
+
+  <!-- 🌸 GIỚI THIỆU (từ code bạn cung cấp) -->
+  <section id="home" class="about active">
+    <h2>VỀ CHÚNG TÔI</h2>
+    <p><b>LYLYfood – Ngon trọn vị, vui trọn ngày!</b></p>
+    <p>
+      Tại LyLyfood, bạn sẽ được thưởng thức đủ món ăn vặt đường phố “ngon quên lối về” – 
+      từ bánh tráng trộn, tokbokki cay nồng đến trà sữa béo ngậy. 
+      Mỗi món đều được chế biến kỹ lưỡng, sạch sẽ và đậm đà hương vị.
+    </p>
+
+    <div class="gallery">
+      <img src="sảnh1.jpg" alt="kimbap mix" />
+      <img src="sảnh 2.png" alt="tokbokki" />
+      <img src="sảnh 3.webp" alt="snack" />
+      <img src="sảnh 4.jpg" alt="chicken" />
+    </div>
+  </section>
+
+  <!-- 🍜 THỰC ĐƠN -->
+  <section id="menu">
+    <h2>Thực đơn của LYLYfood</h2>
+    <p>Đa dạng món ăn hấp dẫn, ăn là ghiền 😋</p>
+    <div class="menu-grid">
+      <div><img src="gà cay.jpeg" alt="gà cay"><h4>Gà sốt cay</h4></div>
+      <div><img src="chả cá.jpg" alt="kimbap"><h4>Kimbap mix</h4></div>
+      <div><img src="cơm trộn.jpg" alt="bánh tráng"><h4>Bánh tráng trộn</h4></div>
+      <div><img src="tok.jpg" alt="trà sữa"><h4>Trà sữa trân châu</h4></div>
+    </div>
+  </section>
+
+  <!-- 📅 ĐẶT BÀN -->
+  <section id="booking">
+    <h2>Đặt bàn tại LYLYfood</h2>
+    <p>Điền thông tin để giữ chỗ nhé 🍽️</p>
+    <form>
+      <input type="text" placeholder="Họ tên của bạn" required />
+      <input type="tel" placeholder="Số điện thoại" required />
+      <input type="datetime-local" required />
+      <button type="submit">Đặt bàn</button>
+    </form>
+  </section>
+
+  <!-- 📸 ALBUM -->
+  <section id="album">
+    <h2>Album ảnh của quán 📸</h2>
+    <div class="menu-grid">
+      <div><img src="gt1.jpg" alt="ảnh 1"></div>
+      <div><img src="gt2.jpg" alt="ảnh 2"></div>
+      <div><img src="gt3.webp" alt="ảnh 3"></div>
+      <div><img src="gt3.webp" alt="ảnh 4"></div>
+    </div>
+  </section>
+
+  <!-- 📞 LIÊN HỆ -->
+  <section id="contact">
+    <h2>Liên hệ LYLYfood</h2>
+    <p>📍 Địa chỉ: 371 Quang Trung, Hoàn Kiếm, Hà Nội <br>
+       📞 Hotline: 0365 789 458 <br>
+       📧 Email: lylyfood@gmail.com</p>
+    <form>
+      <input type="text" placeholder="Tên của bạn" />
+      <input type="email" placeholder="Email liên hệ" />
+      <textarea rows="4" placeholder="Lời nhắn của bạn..."></textarea>
+      <button>Gửi tin nhắn</button>
+    </form>
+  </section>
+
+  <footer>
+    <div>
+      <b>LYLYFOOD</b><br />
+      Địa chỉ: 371 Quang Trung, Q. Hoàn Kiếm, Hà Nội<br />
+      Hotline: 0365 789 458<br />
+      Email: lylyfood@gmail.com<br />
+      Giờ mở cửa: 9h00 – 21h00<br />
+      Theo dõi: 
+      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Tiktok</a>
+    </div>
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll("header nav a");
+    const sections = document.querySelectorAll("section");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        const target = link.getAttribute("data-target");
+        sections.forEach(sec => {
+          if (sec.id === target) sec.classList.add("active");
+          else sec.classList.remove("active");
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
